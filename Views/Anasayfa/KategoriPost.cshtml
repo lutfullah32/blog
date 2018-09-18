@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewData["Title"] = "KategoriPost";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<Postlar> postlar = (List<Postlar>)ViewBag.posts;
+}
+
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card-columns">
+            @foreach (Postlar item in postlar)
+            {
+                <div class="card mb-3">
+
+                    <div class="card-body">
+                        <h6 class="card-title mb-1"><a href="/@item.SefLink">@item.Baslik</a></h6>
+                        <p class="card-text small">
+                            @item.Icerik.Substring(0, 11)...
+                        </p>
+                    </div>
+                    <hr class="my-0">
+                    <div class="card-footer small text-muted">@item.Tarih.ToString("dd.MM.yyyy")</div>
+                </div>
+            }
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+﻿
+
+@model Yetkiler
+@{
+    ViewData["Title"] = "KategoriDuzenle";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<h2>Yetki Düzenle</h2>
+
+<div class="col-md-4">
+    <form action="/admin/yetki/duzenle" method="post">
+        <div class="form-group">
+            <input type="hidden" name="ID" value="@Model.ID" />
+            <label for="Yetki" class="control-label"> Yetki</label>
+            <input name="Yetki" value="@Model.Yetki" class="form-control" />
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Değiştir" class="btn btn-default" />
+        </div>
+    </form>
+</div>

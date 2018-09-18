@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Icerikler>
+
+@{
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+<ol class="breadcrumb">
+    <li class="breadcrumb-item">
+        <a href="/admin/icerik/ekle">Ekle</a>
+    </li>
+</ol>
+<div class="card mb-3">
+    <div class="card-header">
+        <i class="fa fa-table"></i> İçerikler
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Başlık</th>
+                        <th>İçerik</th>
+                        <th>Tarih</th>
+                        <th>Yazar</th>
+                        <th>Kategori</th>
+                        <th>Olaylar</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>Başlık</th>
+                        <th>İçerik</th>
+                        <th>Tarih</th>
+                        <th>Yazar</th>
+                        <th>Kategori</th>
+                        <th>Olaylar</th>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.baslik </td>
+                            <td>@item.icerik.Substring(0,30)...</td>
+                            <td>@item.tarih.ToString("dd.MM.yyyy")</td>
+                            <td>@item.yazar</td>
+                            <td>@item.kategori</td>
+                            <td><a href="/admin/icerik/duzenle/@item.id"><span class="fa fa-edit"></span></a>|<a href="/admin/icerik/sil/@item.id"><span class="fa fa-trash"></span></a></td>
+                        </tr>
+                    }
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="card-footer small text-muted"></div>
+</div>
+

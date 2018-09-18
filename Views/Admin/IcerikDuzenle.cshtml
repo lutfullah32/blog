@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewData["Title"] = "IcerikDuzenle";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+
+    List<SadeceKullanici> yl = ViewBag.yazarlar;
+    List<SadeceKategori> kl = ViewBag.kategoriler;
+    Postlar p = ViewBag.icerik;
+}
+
+<div class="row">
+    <div class="col-md-5">
+        <form action="/admin/icerik/duzenle" method="post">
+            <input type="hidden" value="@p.ID" name="ID" />
+            <div class="form-group">
+                <label for="baslik" class="control-label"> Başlık</label>
+                <input name="Baslik" value="@p.Baslik" class="form-control" />
+            </div>
+            <div class="form-group">
+                
+                <input name="SefLink" type="hidden" value="@p.SefLink" />
+            </div>
+           
+            <div class="form-group">
+                <label class="control-label">İçerik</label>
+                <textarea name="Icerik" class="form-control">@p.Icerik</textarea>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Tarih</label>
+                <input type="date" value="@p.Tarih.ToString("yyyy-MM-dd")" name="Tarih" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="yazar" class="control-label">Yazar</label>
+                <select name="YazarID" class="form-control">
+                    @foreach (var item in yl)
+            {
+                <option value="@item.id"> @item.kadi</option>
+    }
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="kategori" class="control-label">Yazar</label>
+                <select name="KategoriID" class="form-control">
+                    @foreach (var item in kl)
+            {
+                <option value="@item.id">@item.kategori</option>
+    }
+                </select>
+            </div>
+
+            <input name="ResimYolu" type="hidden" value="boş gitmesin" />
+            <div class="form-group">
+                <input type="submit" value="Kaydet" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+

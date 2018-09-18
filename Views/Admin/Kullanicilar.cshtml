@@ -1,0 +1,56 @@
+﻿@model List<Kullanicilary>
+@{
+    ViewData["Title"] = "Kullanicilar";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<h2>Kullanıcılar</h2>
+<ol class="breadcrumb">
+    <li class="breadcrumb-item">
+        <a href="/admin/kullanici/ekle">Ekle</a>
+    </li>
+</ol>
+<div class="card mb-3">
+    <div class="card-header">
+        <i class="fa fa-table"></i> Kullanıcı
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Kullanıcı Adı</th>
+                        <th>Mail</th>
+                        <th>Yetki</th>
+                        <th>Üyelik Tarihi</th>
+                        <th>Olay</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>Kullanıcı Adı</th>
+                        <th>Mail</th>
+                        <th>Yetki</th>
+                        <th>Üyelik Tarihi</th>
+                        <th>Olay</th>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <td>@item.kadi </td>
+                        <td>@item.mail</td>
+                        <td>@item.yetki</td>
+                        <td>@item.uyeliktarihi.ToString("dd.MM.yyyy")</td>
+                        <td><a href="/admin/kullanici/duzenle/@item.id"><span class="fa fa-edit"></span></a>|<a href="/admin/kullanici/sil/@item.id"><span class="fa fa-trash"></span></a></td>
+                    </tr>
+                    }
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="card-footer small text-muted"></div>
+</div>

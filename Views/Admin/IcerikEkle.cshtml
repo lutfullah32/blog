@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewData["Title"] = "Ekle";
+    Layout = "~/Views/Shared/_Admin.cshtml";
+    List<SadeceKullanici> yl = ViewBag.yazarlar;
+    List<SadeceKategori> kl = ViewBag.kategoriler;
+}
+
+<h2>Ekle</h2>
+
+<h4>Icerikler</h4>
+<hr />
+<div class="row">
+    <div class="col-md-5">
+        <form action="/admin/icerik/ekle" method="post">
+
+            <div class="form-group">
+                <label for="baslik" class="control-label"> Başlık</label>
+                <input name="Baslik" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label class="control-label">İçerik</label>
+                <textarea name="Icerik" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Tarih</label>
+                <input type="date" name="Tarih" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="yazar" class="control-label">Yazar</label>
+                <select name="YazarID" class="form-control">
+                    @foreach (var item in yl)
+            {
+                <option value="@item.id">@item.kadi</option>
+    }
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="kategori" class="control-label">Yazar</label>
+                <select name="KategoriID" class="form-control">
+                    @foreach (var item in kl)
+            {
+                <option value="@item.id">@item.kategori</option>
+}
+                </select>
+            </div>
+            <input name="SefLink" type="hidden" value="boş gitmesin" />
+            <input name="ResimYolu" type="hidden" value="boş gitmesin" />
+            <div class="form-group">
+                <input type="submit" value="Ekle" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a href="/admin/icerik">Listeye Dön</a>
+</div>
+

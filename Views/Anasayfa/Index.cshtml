@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    List<Postlar> postlar = (List<Postlar>)ViewBag.posts;
+    int sayfa = ViewBag.sayfa;
+    int sayfalar = ViewBag.sayfalar;
+    int sayfaonceki;
+    int sayfasonraki;
+    if (sayfa + 1 > sayfalar) {  sayfasonraki = sayfalar; } else {  sayfasonraki = sayfa + 1; }
+    if(sayfa==1) {  sayfaonceki = 1; } else {  sayfaonceki = sayfa - 1; }
+
+}
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card-columns">
+            @foreach (Postlar item in postlar)
+    {
+        <div class="card mb-3">
+            
+            <div class="card-body">
+                <h6 class="card-title mb-1"><a href="/@item.SefLink">@item.Baslik</a></h6>
+                <p class="card-text small">
+                    @if (item.Icerik.Length >= 200) {
+                        string s = "...";
+                        @item.Icerik.Substring(0, 200).Trim() @s
+                    } else { @item.Icerik }
+                </p>
+            </div>
+            <hr class="my-0">
+            <div class="card-footer small text-muted">@item.Tarih.ToString("dd.MM.yyyy")</div>
+        </div>
+}
+            
+        </div>
+    </div>
+</div>
+<ul class="pagination">
+    <li class="paginate_button page-item previous @if (sayfa == 1) { string s = "disable"; @s }" id="iftaTable_previous">
+        <a href="@sayfaonceki" class="page-link ">Önceki</a>
+    </li>
+    @for (int i=1;i <= sayfalar;i++)
+    {
+        <li class="paginate_button page-item @if (i==sayfa) { string s="active"; @s }"><a href="/@i" class="page-link">@i</a></li>
+    }
+    <li class="paginate_button page-item next @if (sayfa == sayfalar) { string s = "disable"; @s }" id="dataTable_next">
+        <a href="@sayfasonraki" class="page-link">Sonraki</a>
+    </li>
+</ul>

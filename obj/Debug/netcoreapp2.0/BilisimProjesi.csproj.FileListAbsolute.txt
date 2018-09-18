@@ -1,0 +1,11 @@
+C:\Users\Administrator\source\repos\BilisimProjesi\BilisimProjesi\bin\Debug\netcoreapp2.0\BilisimProjesi.deps.json
+C:\Users\Administrator\source\repos\BilisimProjesi\BilisimProjesi\bin\Debug\netcoreapp2.0\BilisimProjesi.runtimeconfig.json
+C:\Users\Administrator\source\repos\BilisimProjesi\BilisimProjesi\bin\Debug\netcoreapp2.0\BilisimProjesi.runtimeconfig.dev.json
+C:\Users\Administrator\source\repos\BilisimProjesi\BilisimProjesi\bin\Debug\netcoreapp2.0\BilisimProjesi.dll
+C:\Users\Administrator\source\repos\BilisimProjesi\BilisimProjesi\bin\Debug\netcoreapp2.0\BilisimProjesi.pdb
+C:\Users\Administrator\source\repos\BilisimProjesi\BilisimProjesi\obj\Debug\netcoreapp2.0\BilisimProjesi.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\source\repos\BilisimProjesi\BilisimProjesi\obj\Debug\netcoreapp2.0\BilisimProjesi.AssemblyInfoInputs.cache
+C:\Users\Administrator\source\repos\BilisimProjesi\BilisimProjesi\obj\Debug\netcoreapp2.0\BilisimProjesi.AssemblyInfo.cs
+C:\Users\Administrator\source\repos\BilisimProjesi\BilisimProjesi\obj\Debug\netcoreapp2.0\BilisimProjesi.dll
+C:\Users\Administrator\source\repos\BilisimProjesi\BilisimProjesi\obj\Debug\netcoreapp2.0\BilisimProjesi.pdb
+C:\Users\Administrator\source\repos\BilisimProjesi\BilisimProjesi\obj\Debug\netcoreapp2.0\BilisimProjesi.csprojResolveAssemblyReference.cache
