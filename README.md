@@ -1,2 +1,3 @@
 # blog
-Asp.net MVC Core
+Asp.net mvc Core ile blog sitesi
+Veri tabanı olarak Sqlite - Entity FrameWork kullanıldı
